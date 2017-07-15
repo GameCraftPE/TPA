@@ -83,7 +83,7 @@ class essentialsTP extends PluginBase  implements CommandExecutor, Listener {
             return true;
           }
           $this->tp_sender  = $sender->getName();
-          $this->tp_reciver = this->getServer()->getPlayer($args[0])->getName();
+          $this->tp_reciver = $this->getServer()->getPlayer($args[0])->getName();
           if ($this->getServer()->getPlayer($this->tp_reciver) instanceof Player) {
             $sender->sendMessage("§6Your tpa request has been sent");
             $this->getServer()->getPlayer($this->tp_reciver)->sendMessage(TextFormat::GOLD . $this->tp_sender . TextFormat::WHITE . ' '.$this->config->get("Lang_sent_request_you"));
@@ -125,7 +125,7 @@ class essentialsTP extends PluginBase  implements CommandExecutor, Listener {
         {
           if(trim(strtolower($sender->getName())) == trim(strtolower($args[0]))){$sender->sendMessage(TextFormat::RED.$this->config->get("Lang_no_teleport_self"));return true;}
           $this->tp_sender = $sender->getName();
-          $this->tp_reciver = this->getServer()->getPlayer($args[0])->getName();
+          $this->tp_reciver = $this->getServer()->getPlayer($args[0])->getName();
           if($this->getServer()->getPlayer($this->tp_reciver) instanceof Player)
           {
             $sender->sendMessage("§6Your tpa request has been sent");

@@ -65,7 +65,7 @@ class essentialsTP extends PluginBase  implements CommandExecutor, Listener {
 
   }
 
-  public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args){
+  public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool{
     switch($cmd->getName()){
       case 'tpa':
       if (!$sender->hasPermission("rank.lapis")) {

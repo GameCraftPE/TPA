@@ -31,9 +31,6 @@ use pocketmine\tile\Sign;
 use pocketmine\event\block\SignChangeEvent;
 
 
-
-
-
 class essentialsTP extends PluginBase  implements CommandExecutor, Listener {
   private $db2;
   public $username;
@@ -68,7 +65,7 @@ class essentialsTP extends PluginBase  implements CommandExecutor, Listener {
 
   }
 
-  public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+  public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args){
     switch($cmd->getName()){
       case 'tpa':
       if (!$sender->hasPermission("rank.lapis")) {
